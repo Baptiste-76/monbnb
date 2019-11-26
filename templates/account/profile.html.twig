@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Modification de vos informations de profil
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Modification du profil</h1>
+
+        {{ form_start(form, { 'attr': { 'novalidate': 'novalidate' }}) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-success">Enregistrer les modifications</button>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

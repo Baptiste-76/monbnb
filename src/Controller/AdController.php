@@ -50,13 +50,15 @@ class AdController extends AbstractController
                 $image->setAd($ad);
                 $manager->persist($image);
             }
+
+            $ad->setAuthor($this->getUser());
             
             $manager->persist($ad);
             $manager->flush();
 
             $this->addFlash(
                 'success',
-                "Votre annonce <strong>".$ad->getTitle()."</strong> a bien été enregistrée !"
+                "Votre annonce <strong>".$ad->getTitle()."</strong> a bien été créée !"
             );
 
             return $this->redirectToRoute('ads_show', [
