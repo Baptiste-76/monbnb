@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Page non trouvée
+{% endblock %}
+
+{% block body %}
+    <div class="container text-center d-block">
+        <img src="https://media.giphy.com/media/hS42TuYYnANLFR9IRQ/giphy.gif" class="img-fluid mx-auto d-block">
+        <h1>La page que vous recherchez n'existe pas !</h1>
+        <p>Cette petite erreur n'est pas grave ! Cliquez simplement sur un lien pour retourner à l'accueil ou accéder à toutes nos annonces !</p>
+
+        <a href="{{ path('homepage') }}" class="btn btn-primary mx-2">Retour à l'accueil</a>
+        <a href="{{ path('ads_index') }}" class="btn btn-primary mx-2">Accéder à nos annonces</a>
+    </div>
+{% endblock %}

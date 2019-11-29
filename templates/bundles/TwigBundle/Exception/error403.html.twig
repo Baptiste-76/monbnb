@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Vous n'avez pas le droit d'accéder à cette ressource !
+{% endblock %}
+
+{% block body %}
+    <div class="container text-center d-block">
+        <img src="https://media.giphy.com/media/njYrp176NQsHS/giphy.gif" class="img-fluid mx-auto d-block" style="height: 360px; width: 480px">
+        <h1>Touche pas à ça !</h1>
+        <div class="alert alert-danger">
+            <p>Vous n'avez pas le droit d'accéder à cette ressource !</p>
+        </div>
+
+        <a href="{{ path('homepage') }}" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+{% endblock %}

@@ -32,3 +32,16 @@ div.ad-title h1, div.ad-title p, div.carousel-caption {
     max-width: 64 px;
     max-height: 64px;
 }
+
+.datepicker td {
+    color: green;
+}
+
+.datepicker table tr td.disabled {
+    color: firebrick !important;
+}
+
+html, body {
+    background-color: royalblue;
+    color: white;
+}
