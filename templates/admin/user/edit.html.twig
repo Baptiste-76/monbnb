@@ -1,0 +1,39 @@
+{% extends "admin/base.html.twig" %}
+
+{% block title %}
+    Modification de l'utilisateur n° {{ user.id }} ({{user.fullName}})
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="my-5">Modification de l'utilisateur n° {{ user.id }} ({{user.fullName}})</h1>
+
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.picture) }}
+                <div class="row align-items-center text-center">
+                    <div class="col-4">
+                        <img src="{{ user.picture }}" class="avatar">
+                    </div>
+                    <div class="col-8">
+                        {{ form_widget(form.picture) }}
+                    </div> 
+                </div>
+                {{ form_row(form.firstName) }}
+                {{ form_row(form.lastName) }}
+                {{ form_row(form.email) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.introduction) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.slug) }}
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-check"></i>
+                    Enregistrer les modifications
+                </button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

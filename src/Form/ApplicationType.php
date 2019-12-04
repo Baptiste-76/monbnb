@@ -18,7 +18,7 @@ class ApplicationType extends AbstractType {
     protected function getConfiguration($label, $placeholder, $options = [])
     {
         // array_merge() permet de fusionner le tableau de base avec le tableau des éventuelles options contenu dans la variable $options
-        return array_merge([
+        return array_merge_recursive([
             'label' => $label,
             'attr' => [
                 'placeholder' => $placeholder

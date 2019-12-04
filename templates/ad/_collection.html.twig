@@ -9,7 +9,10 @@
     <input type="hidden" id="widgets-counter" value="0">
 
     <div class="form-group">
-        <button type="button" id="add-image" class="btn btn-primary">Ajouter une image</button>
+        <button type="button" id="add-image" class="btn btn-secondary">
+            <i class="fas fa-plus mr-2"></i>
+            Ajouter une image
+        </button>
     </div>
 {% endblock %}
 
@@ -36,7 +39,9 @@
                 </div>
             </div>
             <div class="col-2">
-                <button type="button" data-action="delete" data-target="#block_{{ id }}" class="btn btn-danger">X</button>
+                <button type="button" data-action="delete" data-target="#block_{{ id }}" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i>    
+                </button>
             </div>  
         </div>
     </div>

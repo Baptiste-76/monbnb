@@ -3,21 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        
+
         <title>Mon BnB - {% block title %}Bienvenue !{% endblock %}</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Tomorrow:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Tomorrow:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">  
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/app.css">
         <script src="https://kit.fontawesome.com/dbc1e24743.js" crossorigin="anonymous"></script>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% include "partials/header.html.twig" %}
+        {% include "admin/partials/header.html.twig" %}
 
         {% block body %}{% endblock %}
 
-        {% include "partials/footer.html.twig" %}
+        {% include "admin/partials/footer.html.twig" %}
 
         <script src="/js/jquery.min.js"></script>
         <script src="/js/popper.min.js"></script>

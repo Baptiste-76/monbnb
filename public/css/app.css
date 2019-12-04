@@ -1,5 +1,7 @@
-body {
-    font-family: 'Lobster', cursive;
+html, body {
+    font-family: 'Tomorrow', sans-serif;
+    background-color: royalblue;
+    color: white;
 }
 
 div.container {
@@ -10,6 +12,12 @@ div.ad-title {
     padding: 2em;
     background-size: cover;
     background-position: center center;
+}
+
+div.ad-title .btn {
+    margin-top: 2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
 }
 
 div.ad-title h1, div.ad-title p, div.carousel-caption {
@@ -41,7 +49,18 @@ div.ad-title h1, div.ad-title p, div.carousel-caption {
     color: firebrick !important;
 }
 
-html, body {
-    background-color: royalblue;
+span.rating i {
+    color: goldenrod;
+}
+
+.alert a {
+    text-decoration: none;
+}
+
+.alert .btn {
+    color: white;
+}
+
+tbody tr td:hover {
     color: white;
 }
