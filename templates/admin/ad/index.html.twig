@@ -8,6 +8,8 @@
     <div class="container-fluid">
         <h1 class="my-5">Gestion des annonces</h1>
 
+        {{ pagination.display }}
+
         <table class="table table-hover" style="color: white;">
             <thead>
                 <tr class="text-center">
@@ -21,7 +23,7 @@
             </thead>
 
             <tbody>
-                {% for ad in ads %}
+                {% for ad in pagination.data %}
                     <tr class="text-center">
                         <td>{{ ad.id }}</td>
                         <td>{{ ad.title }}</td>
@@ -51,5 +53,7 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        {{ pagination.display }}
     </div>
 {% endblock %}
