@@ -6,9 +6,8 @@
 
         <title>Mon BnB - {% block title %}Bienvenue !{% endblock %}</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Tomorrow:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">  
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/app.css">
+        {{ encore_entry_link_tags('app') }}
+        <link href="https://fonts.googleapis.com/css?family=Tomorrow:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/dbc1e24743.js" crossorigin="anonymous"></script>
         {% block stylesheets %}{% endblock %}
     </head>
@@ -19,9 +18,7 @@
 
         {% include "admin/partials/footer.html.twig" %}
 
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+        {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

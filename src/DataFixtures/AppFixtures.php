@@ -25,7 +25,7 @@ class AppFixtures extends Fixture
     
     public function load(ObjectManager $manager)
     {
-        $faker = Factory::create('FR-fr');
+        $faker = Factory::create('fr-FR');
 
         $adminRole = new Role();
         $adminRole->setTitle('ROLE_ADMIN');

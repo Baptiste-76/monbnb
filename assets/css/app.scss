@@ -1,0 +1,72 @@
+@import url('./bootstrap.min.css');
+
+html, body {
+    font-family: 'Tomorrow', sans-serif;
+    background-color: royalblue;
+    color: white;
+}
+
+div.container, div.container-fluid {
+    margin-top: 20px;
+}
+
+div.ad-title {
+    padding: 2em;
+    background-size: cover;
+    background-position: center center;
+
+    h1, p, .carousel-caption {
+        color: white;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn {
+        margin-top: 2em;
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+}
+
+.avatar {
+    max-width: 128 px;
+    max-height: 128 px;
+    border-radius: 50%;
+
+    &.avatar-mini {
+        max-width: 24px;
+        max-height: 24px;
+    }
+
+    &.avatar-medium {
+        max-width: 64 px;
+        max-height: 64px;
+    }
+}
+
+.datepicker {
+    td {
+        color: green;
+    }
+
+    table tr td.disabled {
+        color: firebrick !important;
+    }
+}
+
+span.rating i {
+    color: goldenrod;
+}
+
+.alert {
+    a {
+        text-decoration: none;
+    }
+
+    .btn {
+        color: white;
+    }
+}
+
+tbody tr td:hover {
+    color: white;
+}
