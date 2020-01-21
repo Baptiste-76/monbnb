@@ -28,3 +28,6 @@ services:
     App\Service\PaginationService:
         arguments:
             $templatePath: 'admin/partials/pagination.html.twig'
+
+Doctrine\Common\Persistence\ObjectManager:
+    alias: doctrine.orm.default_entity_manager
