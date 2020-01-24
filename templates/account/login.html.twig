@@ -1,20 +1,25 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
-{% block title %}Connexion au site{% endblock %}
+{% block title %}
+    Connexion au site
+{% endblock %}
 
 {% block body %}
 
-    <div class="container">
+    <div class="container pb-5 mb-2">
         <div class="row">
             <div class="col-md-3">
                 &nbsp;
             </div>
             <div class="col-md-6">
-                <div class="bg-light py-3 px-3">
-                    <h1>Connectez-vous !</h1>
+                <div class="bg-light py-3 px-3 rounded-lg">
+                    <h2>Connectez-vous !</h2>
 
                     {% if hasError %}
-                        <div class="alert alert-danger">Attention, l'adresse email et/ou le mot de passe est/sont invalide(s) !</div>
+                        <div class="alert alert-danger">
+                            <h5 class="alert-heading">Attention,</h5> 
+                            <p>l'adresse email et/ou le mot de passe est/sont invalide(s) !</p>
+                        </div>
                     {% endif %}
                     
                     <form action="{{ path('account_login') }}" method="POST">

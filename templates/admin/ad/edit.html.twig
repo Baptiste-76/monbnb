@@ -8,98 +8,107 @@
 
 {% block body %}
 
-<div class="container_fluid">
-    <h1 class="my-5">Modification de l'annonce {{ ad.title }}</h1>
+    <div class="container-fluid">
+        <h3 class="my-5">Modification de l'annonce : {{ ad.title }}</h2>
 
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
-    <div class="row">
-        <div class="col">
-            <div class="card bg-primary">
-                <div class="card-header">
-                    <h4 class="card-title">Corriger l'annonce ?</h4>
+            <div class="row">
+                <div class="col mb-5 pb-5">
+                    <div class="card bg-primary">
+                        <div class="card-header">
+                            <h4 class="card-title">Corriger l'annonce ?</h4>
+                        </div>
+                        <div class="card-body">
+                            {{ form_widget(form) }}
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check mr-2"></i>
+                                Enregistrer les modifications
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    {{ form_widget(form) }}
-
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-check"></i>
-                        Enregistrer les modifications
-                    </button>
+                <div class="col mb-5 pb-5">
+                    <div class="card bg-primary">
+                        <div class="card-header">
+                            <h4 class="card-title">Les réservations</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive-md">
+                                <table class="table table-primary text-white">
+                                    <thead class="thead bg-dark">
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Voyageur</th>
+                                            <th>Date de réservation</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for booking in ad.bookings %}                    
+                                            <tr>
+                                                <td>{{ booking.id }}</td>
+                                                <td>{{ booking.booker.fullName }}</td>
+                                                <td>{{ booking.createdAt | date('d/m/Y H:i')}}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-secondary">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-primary mt-5">
+                        <div class="card-header">
+                            <h4 class="card-title">Les commentaires</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive-md">
+                                <table class="table table-primary text-white">
+                                    <thead class="thead bg-dark">
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Voyageur</th>
+                                            <th>Note</th>
+                                            <th>Commentaire</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for comment in ad.comments %}                    
+                                            <tr>
+                                                <td>{{ comment.id }}</td>
+                                                <td>{{ comment.author.fullName }}</td>
+                                                <td>
+                                                    <span class="badge badge-pill badge-{% if comment.rating <= 2 %}danger{% elseif comment.rating == 3%}warning{%else %}success"{% endif %}>
+                                                        {{ comment.rating }}
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    {{ comment.content }}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-secondary">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card bg-primary">
-                <div class="card-header">
-                    <h4 class="card-title">Les réservations</h4>
-                </div>
-                <div class="card-body">
-                    <table class="table table-primary text-white">
-                        <thead class="thead-primary">
-                            <tr>
-                                <th>Id</th>
-                                <th>Voyageur</th>
-                                <th>Date de réservation</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for booking in ad.bookings %}                    
-                                <tr>
-                                    <td>{{ booking.id }}</td>
-                                    <td>{{ booking.booker.fullName }}</td>
-                                    <td>{{ booking.createdAt | date('d/m/Y H:i')}}</td>
-                                    <td>
-                                        <a href="#" class="btn btn-info">
-                                            <i class="fas fa-pen"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="card bg-primary mt-5">
-                <div class="card-header">
-                    <h4 class="card-title">Les commentaires</h4>
-                </div>
-                <div class="card-body">
-                    <table class="table table-primary text-white">
-                        <thead class="thead-primary">
-                            <tr>
-                                <th>Id</th>
-                                <th>Voyageur</th>
-                                <th>Note</th>
-                                <th>Commentaire</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for comment in ad.comments %}                    
-                                <tr>
-                                    <td>{{ comment.id }}</td>
-                                    <td>{{ comment.author.fullName }}</td>
-                                    <td>{{ comment.rating }}</td>
-                                    <td>{{ comment.content }}</td>
-                                    <td>
-                                        <a href="#" class="btn btn-info">
-                                            <i class="fas fa-pen"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+            
+        {{ form_end(form) }}
     </div>
-
-    
-    {{ form_end(form) }}
-</div>
    
 {% endblock %}
 
@@ -114,19 +123,21 @@
 {% endblock %}
 
 {% block _ad_images_entry_widget %}
-    <div class="row align-items-center mb-3">
-        <div class="col-4">
+    <div class="row flex-column align-items-center mb-3 py-3">
+        <hr style="border: 1px solid white" class="w-50">
+        <div class="col-12 mb-2">
             {% if value %}
+                {{ form_label(form.url, "Url") }}
                 {{ form_widget(form.url) }}
-                <img src="{{ value.url }}" alt="" class="img-fluid">
+                <img src="{{ value.url }}" alt="Photo de {{ value.caption }}" class="img-fluid">
             {% endif %}
         </div>
-        <div class="col-6">
+        <div class="col-12 mb-2">
             {{ form_label(form.caption, "Légende") }}
             {{ form_widget(form.caption) }}
         </div>
-        <div class="col">
-            <button type="button" class="btn btn-danger rounded" data-action="delete" data-target="#block_{{id}}">
+        <div class="col-12">
+            <button type="button" class="btn btn-danger rounded mt-2" data-action="delete" data-target="#block_{{id}}">
                 <i class="fas fa-trash-alt"></i>
             </button>
         </div>

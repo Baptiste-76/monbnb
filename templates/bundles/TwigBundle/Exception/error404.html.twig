@@ -5,12 +5,25 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container text-center d-block">
-        <img src="https://media.giphy.com/media/hS42TuYYnANLFR9IRQ/giphy.gif" class="img-fluid mx-auto d-block">
-        <h1>La page que vous recherchez n'existe pas !</h1>
-        <p>Cette petite erreur n'est pas grave ! Cliquez simplement sur un lien pour retourner à l'accueil ou accéder à toutes nos annonces !</p>
+    <div class="container text-center pb-5 mb-3">
+        <img src="https://media.giphy.com/media/TqiwHbFBaZ4ti/giphy.gif" class="img-fluid">
 
-        <a href="{{ path('homepage') }}" class="btn btn-primary mx-2">Retour à l'accueil</a>
-        <a href="{{ path('ads_index') }}" class="btn btn-primary mx-2">Accéder à nos annonces</a>
+        <div class="text-center mt-4 mx-auto" style="max-width: 70%;">
+            <h4>La page que vous recherchez n'existe pas !</h4>
+
+            <div class="alert rounded-lg" style="background-color: rgba(255, 0, 0, 0.8);">
+                <p class="lead">Cette petite erreur n'est pas grave ! Cliquez simplement sur un lien pour retourner à l'accueil ou accéder à toutes nos annonces !</p>
+            </div>
+
+            <a href="{{ path('homepage') }}" class="btn btn-primary btn-lg mr-2 mb-2">
+                <i class="fas fa-undo mr-2"></i>
+                Retour à l'accueil
+            </a>
+            <a href="{{ path('ads_index') }}" class="btn btn-success btn-lg mr-2 mb-2">
+                <i class="fas fa-arrow-right mr-2"></i>
+                Voir nos annonces
+            </a>
+        </div>
     </div>
 {% endblock %}
+

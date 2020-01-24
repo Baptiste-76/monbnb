@@ -48,6 +48,9 @@ class User implements UserInterface
      * @Assert\Email(
      *  message="L'adresse {{ value }} n'est pas une adresse mail valide. Merci de la modifier !"
      * )
+     * @Assert\NotBlank(
+     *  message="Merci de renseigner votre adresse mail"
+     * )
      */
     private $email;
 
@@ -61,6 +64,9 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     *  message="Merci de renseigner votre mot de passe"
+     * )
      */
     private $hash;
 
@@ -78,6 +84,9 @@ class User implements UserInterface
      *  min=10,
      *  minMessage="Votre introduction doit faire au moins {{ limit }} caractères !"
      * )
+     * @Assert\NotBlank(
+     *  message="Merci de renseigner le champ introduction"
+     * )
      */
     private $introduction;
 
@@ -86,6 +95,9 @@ class User implements UserInterface
      * @Assert\Length(
      *  min=100,
      *  minMessage="Votre introduction doit faire au moins {{ limit }} caractères !"
+     * )
+     * @Assert\NotBlank(
+     *  message="Merci de renseigner le champ description"
      * )
      */
     private $description;
@@ -152,7 +164,7 @@ class User implements UserInterface
         return $this->firstName;
     }
 
-    public function setFirstName(string $firstName): self
+    public function setFirstName($firstName): self
     {
         $this->firstName = $firstName;
 
@@ -164,7 +176,7 @@ class User implements UserInterface
         return $this->lastName;
     }
 
-    public function setLastName(string $lastName): self
+    public function setLastName($lastName): self
     {
         $this->lastName = $lastName;
 
@@ -176,7 +188,7 @@ class User implements UserInterface
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail($email): self
     {
         $this->email = $email;
 
@@ -212,7 +224,7 @@ class User implements UserInterface
         return $this->introduction;
     }
 
-    public function setIntroduction(string $introduction): self
+    public function setIntroduction($introduction): self
     {
         $this->introduction = $introduction;
 
@@ -224,7 +236,7 @@ class User implements UserInterface
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription($description): self
     {
         $this->description = $description;
 

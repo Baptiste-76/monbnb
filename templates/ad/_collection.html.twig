@@ -1,6 +1,8 @@
 {# _[NOM]_[WIDGET] permet de modifier la sortie de form_widget() pour un champ donné (ici le champ "ad_images") #}
 {% block _ad_images_widget %}
-    <p>Ici, vous pouvez ajouter vos propres images !</p>
+    <div class="alert alert-dark">
+        <strong>Ici, vous pouvez ajouter vos propres images !</strong>
+    </div>
 
     {# Attention ici la variable "form" ne représente pas le formulaire dans sa globalité mais uniquement un champ donné du formulaire (ici le champ "ad_images") #}
     {{ form_widget(form) }}
@@ -25,20 +27,20 @@
 {% block _ad_images_entry_widget %}
     <div class="form-group" id="block_{{ id }}">
         <div class="row">
-            <div class="col-10">
+            <div class="col-sm-8 col-lg-10">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-xs-12 col-lg-6">
                         {# Attention ici la variable "form" représente une entrée (ici l'entrée "url") #}
                         {{ form_widget(form.url) }}
                         {{ form_errors(form.url) }}
                     </div>
-                    <div class="col">
+                    <div class="col-xs-12 col-lg-6">
                         {{ form_widget(form.caption) }}
                         {{ form_errors(form.caption) }}
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-sm-4 col-lg-2">
                 <button type="button" data-action="delete" data-target="#block_{{ id }}" class="btn btn-danger">
                     <i class="fas fa-trash-alt"></i>    
                 </button>

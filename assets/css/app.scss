@@ -4,6 +4,10 @@ html, body {
     font-family: 'Tomorrow', sans-serif;
     background-color: royalblue;
     color: white;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 div.container, div.container-fluid {
@@ -21,8 +25,8 @@ div.ad-title {
     }
 
     .btn {
-        margin-top: 2em;
-        font-size: 1.5em;
+        margin-top: 1em;
+        font-size: 1.3em;
         line-height: 1.5em;
     }
 }
@@ -69,4 +73,14 @@ span.rating i {
 
 tbody tr td:hover {
     color: white;
+}
+
+.table td, .table th {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+a.dropdown-item:hover {
+    background-color: initial;
+    opacity: 0.5;
 }

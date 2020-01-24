@@ -5,25 +5,45 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="my-5">Modification du commentaire n° {{ comment.id }}</h1>
+    <div class="container pb-5 mb-3">
 
-        <div class="alert alert-primary">
-            <strong>Annonce liée :</strong> {{ comment.ad.title }}<br>
-            <strong>Auteur :</strong> {{ comment.author.fullName }}<br>
-            <strong>Date de création :</strong> {{ comment.createdAt | date('d/m/Y H:i') }}<br>
-            <strong>Note donnée :</strong> {{ comment.rating }}
+        <h3 class="my-5">Modification du commentaire n° {{ comment.id }}</h3>
+
+        <div class="alert alert-primary rounded-lg">
+            <div class="mb-2">
+                <strong>Annonce liée :</strong><br>
+                {{ comment.ad.title }}
+            </div>
+            <div class="mb-2">
+                <strong>Auteur :</strong><br>
+                {{ comment.author.fullName }}
+            </div>
+            <div class="mb-2">
+                <strong>Date de création :</strong><br>
+                {{ comment.createdAt | date('d/m/Y H:i') }}
+            </div>
+            <div class="mb-2">
+                <strong>Note donnée :</strong><br>
+                <span class="badge badge-pill badge-{% if comment.rating <= 2 %}danger{% elseif comment.rating == 3 %}warning{% else %}success{% endif %}" style="font-size: 0.875rem;">
+                    {{ comment.rating }}
+                </span>
+                
+            </div>
         </div>
 
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div class="alert alert-primary rounded-lg">
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
-        {{ form_widget(form) }}
+            {{ form_widget(form) }}
 
-        <button type="submit" class="btn btn-success">
-            <i class="fas fa-check"></i>
-            Enregistrer les modifications
-        </button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-check mr-2"></i>
+                    Enregistrer les modifications
+                </button>
+            </div>
 
-        {{ form_end(form) }}
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}

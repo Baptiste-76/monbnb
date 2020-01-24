@@ -136,7 +136,7 @@ class AccountController extends AbstractController
             // On vérifie que l'ancien mot de passe entré est bien le bon !
             if(!password_verify($passwordUpdate->getOldPassword(), $user->getHash())) {
                 // Si ce n'est pas le cas, on gère l'erreur
-                $form->get('oldPassword')->addError(new FormError("Le mot de passe actuel que vous avez entré n'est pas le bon !"));
+                $form->get('oldPassword')->addError(new FormError("Le mot de passe saisi est incorrect !"));
             } else {
                 $newPassword = $passwordUpdate->getNewPassword();
                 $hash = $encoder->encodePassword($user, $newPassword);

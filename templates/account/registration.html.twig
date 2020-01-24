@@ -1,47 +1,54 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Inscription{% endblock %}
+{% block title %}
+    Inscription
+{% endblock %}
 
 {% block body %}
 
-<div class="container">
-    <h1 class="my-5">Inscrivez-vous sur notre site !</h1>
+<div class="container pb-5">
+    <h2 class="my-5">Rejoignez-nous !</h2>
 
     {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
-    <div class="row">
-            <div class="col">
-                <div class="alert alert-primary">
-                    <h2 class="laert-heading">Informations générales</h2>
-                    <hr>
-                    {{ form_row(form.firstName) }}
-                    {{ form_row(form.lastName) }}
-                    {{ form_row(form.email) }}
-                    {{ form_row(form.picture) }}
-                </div>
-                <div class="alert alert-primary">
-                    <h2 class="alert-heading">Mot de passe</h2>
-                    <hr>
-                    {{ form_row(form.hash) }}
-                    {{ form_row(form.passwordConfirm) }}
-                </div>
+    <div class="row mb-3">
+        <div class="col-md-6 mb-3">
+            <div class="alert alert-primary rounded-lg">
+                <h3 class="alert-heading">Informations générales</h3>
+                <hr>
+                {{ form_row(form.firstName) }}
+                {{ form_row(form.lastName) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.picture) }}
             </div>
-            <div class="col">
-                <div class="alert alert-primary">
-                    <h2 class="alert-heading">Détails</h2>
-                    <hr>
-                    {{ form_row(form.introduction) }}
-                    {{ form_row(form.description) }}
+            <div class="alert alert-primary rounded-lg mb-0">
+                <h3 class="alert-heading">Mot de passe</h3>
+                <hr>
+                {{ form_row(form.hash) }}
+                {{ form_row(form.passwordConfirm) }}
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="alert alert-primary rounded-lg h-100">
+                <h3 class="alert-heading">Détails</h3>
+                <hr>
+                {{ form_row(form.introduction) }}
+                {{ form_row(form.description) }}
 
-                    <hr>
-                    <p>Vous y êtes presque, confirmez votre inscription et rejoignez-nous !</p>
-                    <button type="submit" class="btn btn-success">
+                <hr>
+                
+                <div class="alert alert-dark">
+                    <strong>Vous y êtes presque, confirmez votre inscription et rejoignez-nous !</strong>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success mt-2">
                         <i class="fas fa-check mr-2"></i>
                         Confirmez mon inscription !
                     </button>
                 </div>
             </div>
         </div>
+    </div>
 
     {{ form_end(form) }}
 </div>

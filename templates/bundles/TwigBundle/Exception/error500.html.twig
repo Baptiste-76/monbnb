@@ -1,7 +1,7 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
 {% block title %}
-    Vous n'avez pas le droit d'accéder à cette ressource !
+    Page non trouvée
 {% endblock %}
 
 {% block body %}
@@ -9,16 +9,21 @@
         <img src="https://media.giphy.com/media/TqiwHbFBaZ4ti/giphy.gif" class="img-fluid">
 
         <div class="text-center mt-4 mx-auto" style="max-width: 70%;">
-            <h4>Accès interdit !</h4>
+            <h4>Erreur interne !</h4>
 
             <div class="alert rounded-lg" style="background-color: rgba(255, 0, 0, 0.8);">
-                <p class="lead">Vous n'avez pas le droit d'accéder à cette ressource !</p>
+                <p class="lead">Nous nous excusons pour la gêne occasionnée.</p>
             </div>
 
-            <a href="{{ path('homepage') }}" class="btn btn-primary btn-lg">
+            <a href="{{ path('homepage') }}" class="btn btn-primary btn-lg mr-2 mb-2">
                 <i class="fas fa-undo mr-2"></i>
                 Retour à l'accueil
+            </a>
+            <a href="{{ path('ads_index') }}" class="btn btn-success btn-lg mr-2 mb-2">
+                <i class="fas fa-arrow-right mr-2"></i>
+                Voir nos annonces
             </a>
         </div>
     </div>
 {% endblock %}
+

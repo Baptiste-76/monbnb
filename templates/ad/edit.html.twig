@@ -8,14 +8,18 @@
 
 {% block body %}
     <div class="container">
-        <h1>Modifier l'annonce {{ ad.title }}</h1>
+        <h2>Modifier l'annonce : {{ ad.title }}</h2>
         
         {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
         {{ form_widget(form) }}
 
-        <button type="submit" class="btn btn-success">Enregistrer les modifications</button>
-
+        <div class="pb-5 mb-3 text-center">
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-check mr-2"></i>
+                Enregistrer les modifications
+            </button>
+        </div>
         {{ form_end(form) }}
     </div>  
 {% endblock %}

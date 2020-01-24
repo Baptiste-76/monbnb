@@ -3,18 +3,21 @@
 {% block title %}Bienvenue sur le meilleur réseau d'appartements !</sea>{% endblock %} 
 
 {% block body %}
-    <div class="container">
+    <div class="container pb-5">
         <div class="jumbotron mt-3">
-            <h1 class="display-3">Bienvenue sur MonBnB !</h1>
+            <h3>Bienvenue sur Mon BnB !</h3>
             <p class="lead">Nous mettons en relation les voyageurs et les propriétaires qui veulent profiter d'opportunités et gagner de l'argent en proposant leur bien à la location !</p>
-            <hr class="my-4">
+            <hr style="border: 1px solid white;" class="w-50 my-4">
             <p>Vous êtes voyageur ? Et vous voulez voir où vous pourrez loger pour votre prochaine déplacement ?</p>
-            <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{{ path('ads_index') }}" role="button">Voir les annonces</a>
-            </p>
+            <div class="text-center">
+                <a class="btn btn-primary btn-lg" href="{{ path('ads_index') }}" role="button">
+                    <i class="fas fa-bullhorn mr-2"></i>
+                    Voir les annonces
+                </a>
+            </div>
         </div>
 
-        <h2 class="h1 my-5">Nos appartements stars !</h2>
+        <h3 class="my-5">Nos appartements stars !</h3>
 
         <div class="row">
             {% for data in ads %}
@@ -22,23 +25,31 @@
             {% endfor %}
         </div>
 
-        <h2 class="h1 my-5">Nos propriétaires stars !</h2>
+        <h3 class="my-5">Nos propriétaires stars !</h3>
 
         <div class="row">
             {% for data in users %}
                 <div class="col-md-6">
-                    <div class="card border-secondary mb-3">
+                    <div class="card border-secondary mb-3 rounded-lg">
                         <div class="card-body">
-                            <h4 class="card-title">
+                            <h4 class="card-title mb-5">
                                 {{ data.user.fullName }}
                             </h4>
 
-                            <hr>
+                            <div class="row card-text pb-3 align-items-center">
+                                <div class="col-6 text-center">
+                                    <img src="{{ data.user.picture }}" alt="Avatar de {{ data.user.fullName }}" class="avatar mr-3">
+                                </div>
+                                <div class="col-6">
+                                    <p>{{ data.user.introduction }}</p>
+                                </div>
+                            </div>
 
-                            <div class="card-text">
-                                <img src="{{ data.user.picture }}" alt="Avatar de {{ data.user.fullName }}" class="float-left mr-3">
-                                <p>{{ data.user.introduction }}</p>
-                                <a href="{{ path('user_show', {'slug': data.user.slug}) }}" class="btn btn-primary float-right">Ensavoir plus</a>
+                            <div class="text-center">
+                                <a href="{{ path('user_show', {'slug': data.user.slug}) }}" class="btn btn-primary my-2">
+                                    <i class="fas fa-plus mr-2"></i>
+                                    En savoir plus
+                                </a>
                             </div>
                         </div>
                     </div>

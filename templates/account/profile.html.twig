@@ -1,19 +1,19 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-    Modification de vos informations de profil
+    Modification du profil
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="my-5">Modification du profil</h1>
+    <div class="container pb-5">
+        <h2 class="my-5">Modification de vos informations de profil</h2>
 
         {{ form_start(form, { 'attr': { 'novalidate': 'novalidate' }}) }}
 
-        <div class="row">
-            <div class="col">
-                <div class="alert alert-primary">
-                    <h2 class="laert-heading">Informations générales</h2>
+        <div class="row mb-3">
+            <div class="col-md-6 mb-3">
+                <div class="alert alert-primary rounded-lg h-100">
+                    <h3 class="alert-heading">Informations générales</h3>
                     <hr>
                     {{ form_row(form.firstName) }}
                     {{ form_row(form.lastName) }}
@@ -21,19 +21,24 @@
                     {{ form_row(form.picture) }}
                 </div>
             </div>
-            <div class="col">
-                <div class="alert alert-primary">
-                    <h2 class="alert-heading">Détails</h2>
+            <div class="col-md-6 mb-3">
+                <div class="alert alert-primary rounded-lg h-100">
+                    <h3 class="alert-heading">Détails</h3>
                     <hr>
                     {{ form_row(form.introduction) }}
                     {{ form_row(form.description) }}
 
                     <hr>
-                    <p>Si vous avez terminé vos modifications, pensez à les sauvegarder !</p>
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-check mr-2"></i>
-                        Enregistrer les modifications
-                    </button>
+                    
+                    <div class="alert alert-dark">
+                        <strong>Si vous avez terminé vos modifications, pensez à les sauvegarder !</strong>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="fas fa-check mr-2"></i>
+                            Enregistrer les modifications
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

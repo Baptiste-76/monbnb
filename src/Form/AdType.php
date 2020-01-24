@@ -61,9 +61,10 @@ class AdType extends ApplicationType
                 'images',
                 CollectionType::class,
                 [
+                    'label' => 'Image(s)',
                     'entry_type' => ImageType::class,
-                    /* L'option 'allow_add' permet d'autoriser ou non l'ajout d'une entrée pour un champ (ici le champ 'images') -> cela génère par la même occasion le code HTML nécessaire à l'inclusion d'une 
-                    nouvelle entrée et le stocke dans une variable nommée "data-prototype" */
+                    /* L'option 'allow_add' permet d'autoriser ou non l'ajout d'une entrée pour un champ (ici le champ 'images') -> cela génère par la même occasion le code HTML nécessaire à l'inclusion 
+                    d'une nouvelle entrée et le stocke dans une variable nommée "data-prototype" */
                     'allow_add' => true,
                     'allow_delete' => true
                 ]

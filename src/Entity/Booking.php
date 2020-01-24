@@ -167,7 +167,7 @@ class Booking
         return $this->startDate;
     }
 
-    public function setStartDate(\DateTimeInterface $startDate): self
+    public function setStartDate($startDate): self
     {
         $this->startDate = $startDate;
 
@@ -179,7 +179,7 @@ class Booking
         return $this->endDate;
     }
 
-    public function setEndDate(\DateTimeInterface $endDate): self
+    public function setEndDate($endDate): self
     {
         $this->endDate = $endDate;
 
@@ -215,7 +215,7 @@ class Booking
         return $this->comment;
     }
 
-    public function setComment(?string $comment): self
+    public function setComment($comment): self
     {
         $this->comment = $comment;
 
