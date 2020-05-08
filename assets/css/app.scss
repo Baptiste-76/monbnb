@@ -2,7 +2,7 @@
 
 html, body {
     font-family: 'Tomorrow', sans-serif;
-    background-color: royalblue;
+    // background-color: royalblue;
     color: white;
     hyphens: auto;
     -moz-hyphens: auto;
@@ -10,8 +10,21 @@ html, body {
     -webkit-hyphens: auto;
 }
 
+.fixebg {
+    background: url("../../public/earth.jpg") 50% 50% no-repeat;
+    background-size: cover !important;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
 div.container, div.container-fluid {
-    margin-top: 20px;
+    padding-top: 100px;
 }
 
 div.ad-title {
